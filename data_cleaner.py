@@ -29,19 +29,15 @@ def json_to_dataframe(board_json):
 
 def clean_missing_values(df):
 
+    df = df.copy()
+
     for col in df.columns:
 
-        if df[col].dtype == "object":
-            df[col].fillna(
-                "Unknown",
-                inplace=True
-            )
+        if pd.api.types.is_string_dtype(df[col]):
+            df[col] = df[col].fillna("Unknown")
 
         else:
-            df[col].fillna(
-                0,
-                inplace=True
-            )
+            df[col] = df[col].fillna(0)
 
     return df
 def clean_text(df):
@@ -53,7 +49,7 @@ def clean_text(df):
 
     for col in df.columns:
 
-        if df[col].dtype == object:
+        if pd.api.types.is_string_dtype(df[col]):
 
             df[col] = (
                 df[col]
