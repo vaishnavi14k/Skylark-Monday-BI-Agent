@@ -1,0 +1,19 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Testing files
+test_openai.py
+test_gemini.py
+check_models.py
+
+# Generated files
+deals_output.csv
+decision_log.pdf
