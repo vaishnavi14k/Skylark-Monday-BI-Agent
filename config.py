@@ -5,8 +5,9 @@ load_dotenv()
 
 # Monday.com
 MONDAY_API_TOKEN = os.getenv("MONDAY_API_TOKEN")
-DEALS_BOARD_ID = int(os.getenv("DEALS_BOARD_ID"))
-WORK_ORDERS_BOARD_ID = int(os.getenv("WORK_ORDERS_BOARD_ID"))
+DEALS_BOARD_ID = int(os.getenv("DEALS_BOARD_ID", 0))
+
+WORK_ORDERS_BOARD_ID = int(os.getenv("WORK_ORDERS_BOARD_ID", 0))
 
 # OpenAI
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
