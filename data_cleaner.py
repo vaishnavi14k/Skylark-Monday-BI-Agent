@@ -29,30 +29,21 @@ def json_to_dataframe(board_json):
 
 def clean_missing_values(df):
 
-    df=df.copy()
-
-
     for col in df.columns:
 
-
-        if df[col].dtype=="object":
-
+        if df[col].dtype == "object":
             df[col].fillna(
                 "Unknown",
                 inplace=True
             )
 
-
         else:
-
             df[col].fillna(
                 0,
                 inplace=True
             )
 
-
     return df
-
 def clean_text(df):
     """
     Remove extra spaces and standardize text.
